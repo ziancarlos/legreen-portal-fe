@@ -1097,6 +1097,45 @@ const RegistrationForm = ({ onSubmit }) => {
             gap: var(--spacing-4);
           }
 
+          /* Enhanced datetime-local input responsiveness */
+          input[type="datetime-local"] {
+            padding: var(--spacing-3);
+            font-size: var(--font-size-base);
+            width: 100%;
+            min-width: 0;
+            -webkit-appearance: none;
+            -moz-appearance: textfield;
+          }
+
+          /* Webkit-specific fixes for datetime inputs */
+          input[type="datetime-local"]::-webkit-datetime-edit {
+            display: block;
+            width: 100%;
+            padding: 0;
+          }
+
+          input[type="datetime-local"]::-webkit-datetime-edit-fields-wrapper {
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+          }
+
+          input[type="datetime-local"]::-webkit-datetime-edit-text {
+            color: var(--gray-600);
+            padding: 0 2px;
+          }
+
+          input[type="datetime-local"]::-webkit-datetime-edit-month-field,
+          input[type="datetime-local"]::-webkit-datetime-edit-day-field,
+          input[type="datetime-local"]::-webkit-datetime-edit-year-field,
+          input[type="datetime-local"]::-webkit-datetime-edit-hour-field,
+          input[type="datetime-local"]::-webkit-datetime-edit-minute-field {
+            padding: 0 2px;
+            border: none;
+            background: transparent;
+            color: var(--gray-900);
+          }
+
           .form-group-full {
             grid-column: 1;
           }
@@ -1215,6 +1254,29 @@ const RegistrationForm = ({ onSubmit }) => {
           .form-input {
             padding: var(--spacing-3);
             font-size: var(--font-size-base);
+          }
+
+          /* Ultra-responsive datetime-local for very small screens */
+          input[type="datetime-local"] {
+            padding: var(--spacing-2) var(--spacing-3);
+            font-size: var(--font-size-sm);
+            width: 100%;
+            min-width: 0;
+            overflow: hidden;
+          }
+
+          /* Additional webkit fixes for tiny screens */
+          input[type="datetime-local"]::-webkit-datetime-edit {
+            min-height: 1.5rem;
+            display: flex;
+            align-items: center;
+            width: 100%;
+          }
+
+          input[type="datetime-local"]::-webkit-datetime-edit-fields-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1px;
           }
 
           .form-label {

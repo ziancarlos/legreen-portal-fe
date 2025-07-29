@@ -398,6 +398,68 @@ body {
   .grid {
     gap: var(--spacing-4);
   }
+
+  /* Responsive form inputs */
+  .form-input {
+    padding: var(--spacing-3);
+    font-size: var(--font-size-base);
+  }
+
+  /* Specific styles for datetime-local inputs on mobile */
+  input[type="datetime-local"] {
+    padding: var(--spacing-3);
+    font-size: var(--font-size-sm);
+    /* Ensure the input doesn't overflow on small screens */
+    min-width: 0;
+    width: 100%;
+  }
+
+  .form-label {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-2);
+  }
+
+  .form-group {
+    margin-bottom: var(--spacing-4);
+  }
+}
+
+/* Additional responsive styles for small mobile devices */
+@media (max-width: 480px) {
+  .form-input {
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--font-size-sm);
+  }
+
+  /* Enhanced datetime-local input for very small screens */
+  input[type="datetime-local"] {
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--font-size-xs);
+    /* Ensure proper display on very small screens */
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+  }
+
+  /* Fix for webkit-based browsers on mobile */
+  input[type="datetime-local"]::-webkit-datetime-edit {
+    padding: 0;
+    display: block;
+    width: 100%;
+  }
+
+  input[type="datetime-local"]::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+
+  .form-label {
+    font-size: var(--font-size-xs);
+    margin-bottom: var(--spacing-1);
+  }
+
+  .form-error {
+    font-size: var(--font-size-xs);
+    margin-top: var(--spacing-1);
+  }
 }
 
 /* Step Indicator */
